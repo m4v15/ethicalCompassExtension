@@ -1,0 +1,27 @@
+#actionButton{
+  color: white;
+  padding: 15px 32px;
+  background-color: black;
+}
+
+#popup{
+			width:300px;
+			height:200px;
+			text-align:center;
+			line-height:200px;
+		}
+
+.active{
+  background-color:blue;
+  border:red;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.product{
+  /* background-color:blue; */
+  border:red;
+  border-width: 5px;
+  border-style: solid;
+  display: inline-block;
+}
