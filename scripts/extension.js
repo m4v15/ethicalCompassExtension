@@ -1,25 +1,24 @@
 //message Sender to DOM
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('status').textContent = "Extension loaded";
-    var button = document.getElementById('changelinks');
-    var styleButton = document.getElementById('addStyling');
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("status").textContent = "Extension loaded";
+  var styleButton = document.getElementById("addStyling");
 
-    function makeHighlightActive(){
-      $('.product').toggleClass('active');
-    }
+  function getAllProducts() {
+    $("article[id^='product-']").toggleClass("active");
+  }
+  function makeHighlightActive() {
+    $(".product").toggleClass("active");
+  }
 
-    styleButton.addEventListener('click', function () {
-        $('#status').html('Clicked change style button');
-        makeHighlightActive()
-        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-          chrome.tabs.insertCSS(tabs[0].id, {
-              file: "css/index.css"
-          });
-        });
+  styleButton.addEventListener("click", function() {
+    $("#status").html("Highlight products");
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+      chrome.tabs.insertCSS(tabs[0].id, {
+        file: "css/index.css"
+      });
     });
-
+  });
 });
-
 
 //insertCSS on button click?
 //-> test
